@@ -1,8 +1,9 @@
 {
   "name": "pattern-portfolio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "A living document of Responsive Deliverables",
+  "homepage": "https://github.com/cjdsie/pattern-portfolio",
   "author": "Chris Da Sie <chris@chrisdasie.com> (http://chrisdasie.com)",
   "keywords": ["components", "css", "framework", "ui", "patterns"],
   "scripts": {
@@ -23,7 +24,10 @@
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-sass": "~0.5.0"
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
   },
   "support": {
     "issues": "https://github.com/cjdsie/pattern-portfolio/issues/"
@@ -31,6 +35,6 @@
   "repository": { 
     "type" : "git", 
     "url" : "https://github.com/cjdsie/pattern-portfolio.git"
-  }
+  },
   "license": "http://chrisdasie.mit-license.org"
 }
