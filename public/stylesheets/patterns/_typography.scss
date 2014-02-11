@@ -1,0 +1,225 @@
+/************************
+****** Typography *******
+**** Version: 0.0.1 *****
+*************************/
+
+/* Table of Content
+==================================================
+	1.0 Variables
+	2.0 Functions
+	3.0 Mixins
+	4.0 Base Styles
+	4.0 Google Web Fonts Implementation
+	5.0 Font Awesome Implementation
+	*/
+
+
+/* Functions
+========================= */
+
+@function em($target, $context: $basefont) {
+    @return ($target / $context) * 1em;
+}
+
+/* Mixins
+========================= */
+
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: em($sizeValue);
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 24) {
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (24 / $basefont);
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+/* Base Styles
+========================= */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #181818;
+  font-family: $body-font;
+  font-weight: $regular;
+  text-rendering: optimizelegibility;
+  line-height:(24 / $basefont);
+  margin: 0;
+  a{
+    font-weight: inherit;
+  }
+}
+
+h1 {
+  margin-bottom:em(21, $baseh1);
+  font-family: $headline-font;
+}
+
+h2 {
+  margin-bottom:em(17, $baseh2);
+}
+
+h3 {
+  margin-bottom:em(19, $baseh3);
+}
+
+h4 {
+  margin-bottom:em(24, $baseh4);
+	 
+}
+
+ h5 {
+  margin-bottom:em(20, $baseh5);
+ }
+
+ h6 {
+  margin-bottom:em(20, $baseh6);
+  text-transform:uppercase;
+ }
+
+.subheader {
+  color: #777;
+}
+
+p {
+  margin: 0 0 $vertical-measure 0; // set bottom margin equal to line-height/vertical measure
+}
+
+ol, ul, dl, address {
+  margin-bottom: em(24, $basefont);
+  font-size: em($basefont);
+  line-height: (24 / $basefont);
+}
+
+small {
+  font-size: em(10);
+}
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+cite {
+  font-style: italic;
+  line-height: 90%;
+  font-weight: $light;
+  color: $black-20;
+}
+
+dl, dd {
+  margin-bottom: em(24);
+}
+
+dt {
+  font-weight: $heavy;
+}
+
+.dl-horizontal {
+  dt {
+    float: left;
+    clear: left;
+    width: 20.25%;
+    text-align: right;
+  }
+  dd {
+    margin-left: 22.78%;
+  }
+}
+
+abbr[title] {
+  border-bottom: 1px dotted #c7ced6;
+  cursor: help;
+}
+
+b, strong {
+  font-weight: $heavy;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background-color: #f3f5f6;
+  color: #000000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #f3f5f6;
+  color: $black;
+  font-style: italic;
+  font-weight: bold;
+  padding: 0 .25em;
+}
+
+pre, code, kbd, samp {
+  font-family: Monaco,Courier New,monospace;
+  font-size: em(14);
+  line-height: 1.5;
+}
+
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code{
+  color: $lightgreen;
+}
+
+sub {
+  position: relative;
+  font-size: em(12);
+  line-height: 0;
+  vertical-align: baselineheight;
+  bottom: -0.25em;
+}
+
+sup {
+  position: relative;
+  font-size: em(12);
+  line-height: 0;
+  vertical-align: baselineheight;
+  top: -0.5em;
+}
+
+p {
+  hyphenate: auto;
+  hyphenate-lines: 3;
+  img {
+    margin-bottom: 0.375em;
+  }
+  &.lead {
+    font-size: em(21);
+    line-height: em(27/$basefont);
+    color: #777;
+  }
+  + p.no-indent {
+    text-indent: 0;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+  color: #333;
+}
+
+del {
+  text-decoration: line-through;
+}
+

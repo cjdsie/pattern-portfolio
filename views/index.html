@@ -7,11 +7,39 @@ Please do not remove any files included from the admin folder.
 
 {{include admin/html-header.html}}
 
+	<!-- Place your CSS files here
+	================================================== -->
+  	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet", href="stylesheets/pattern.min.css">
+
+	<!-- Modernize older versions of IE
+	 ================================================== -->
+     {{include admin/older-ie-scripts.html}}
+
+</head><!-- @head -->
+<body>
+
 <!-- Place patterns to include in portfolio after this comment -->
 
-<main class="patterns">
+<header role="banner" class="admin-header">
+	<a id="trigger-overlay" class="menu-toggle">
+		<h3>Menu</h3>
+		<div class="patty">
+			</div>
+	</a>
+		<h1>Pattern Portfolio</h1>
+</header><!-- @header -->	
+
+<main class="patterns container" role="main">
+
+	
+	{{include patterns/color-palette.html}}
+	
+	{{include patterns/typography.html}}
 	
 </main><!-- @patterns -->
+
+{{include navigation.html}}
 
 {{include admin/footer.html}}	
 {{include admin/html-footer.html}}

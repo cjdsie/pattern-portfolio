@@ -1,0 +1,47 @@
+$admin-font: "Open Sans",sans-serif;
+$admin-color-lightgrey: #868c92; //light grey for body copy
+$admin-color-lightblue: #5ba4e5; //light blue for secondary or tertiary headlines
+$admin-color-darkgrey: #242628; //dark grey for reserved headlines or dark copy
+$admin-color-beige: #edece4; //beige for background
+$admin-color-green: #9fbb58; //accent green
+$admin-color-footer: #18191b; //really dark footer color (optional)
+
+$admin-basefont:16;
+$admin-baseh1:55;
+$admin-baseh2:36;
+$admin-baseh3:26;
+$admin-baseh4:22;
+$admin-baseh5:11;
+$admin-baseh6:16;
+$admin-basep: 16;
+
+
+@mixin admin-body {
+  font-family: $admin-font;
+  font-weight: 400;
+  font-style: normal;
+  font-size: em(18);
+  line-height: 1.5;
+}
+
+@mixin section-style {
+  width: 100%;
+  display:block;
+  position: relative;
+  font-family: $admin-font;
+  @include clearfix();
+  margin-bottom: ($base-unit * 12);
+  h4.admin-h4{
+    font-weight: $heavy;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: em($admin-baseh4);
+    font-family: inherit;
+  }
+  h3.admin-h3{
+    color: $admin-color-lightblue;
+    font-size: em($admin-baseh3);
+    border-bottom: 1px solid $admin-color-beige;
+  }
+}
+

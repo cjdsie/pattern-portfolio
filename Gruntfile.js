@@ -7,28 +7,28 @@ module.exports = function(grunt) {
 		sass: {                                 // Task
 			dist: {                             // Target
 				files: {                        // Dictionary of files
-					'css/pattern.css': 'sass/pattern.scss'     // 'destination': 'source'
+					'public/stylesheets/pattern.css': 'public/stylesheets/pattern.scss'     // 'destination': 'source'
 					}
 			},
 			dev: {                              // Another target
 				options: {
 					style: 'compacted',                      // Dictionary of render options
-					includePaths: ['sass/','patterns/']
+					includePaths: ['stylesheets', 'admin/','patterns/', 'optional/']
 				}
 			}
 		},
 		uglify: {
 			build: {
-				src: 'javascripts/*.js',
-				dest: 'javascripts/*.min.js'
+				src: 'public/javascripts/pattern.js',
+				dest: 'public/javascripts/pattern.min.js'
 			}
 		},
 		cssmin: {
 			minify: {
 				expand: true,
-				cwd: 'css/',
+				cwd: 'public/stylesheets/',
 				src: ['pattern.css', '!pattern.min.css'],
-				dest: 'css/',
+				dest: 'public/stylesheets/',
 				ext: '.min.css'
 			}
 		},
@@ -48,13 +48,14 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			js: {
-				src: ['javascripts/*.js'],
-				dest: 'javascripts/pattern.min.js'
+				src: ['public/javascripts/classie.js', 'public/javascripts/prism.js', 'public/javascripts/pattern.js'],
+				dest: 'public/javascripts/pattern.min.js'
 			}
 		},
 		watch: {
 			files: [
 			'public/*',
+			'public/stylesheets/*.scss',
 			'public/stylesheets/*.css',
 			'public/javascripts/*.js',
 			'views/*'

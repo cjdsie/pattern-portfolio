@@ -1,0 +1,305 @@
+@import "admin-variables", "prism";
+
+*{
+  @include border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $body-bg; 
+  height: 100%;
+  font-size: $base-font-size;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: $admin-color-green;
+  @include vendorize(text-size-adjust, $base-font-size);
+}
+
+
+body {
+  background: $white;
+  @include admin-body;
+  -webkit-font-smoothing: $font-smoothing;
+  color: $admin-color-lightgrey;
+  /* Fix for webkit rendering */
+  @include vendorize(text-size-adjust, $base-font-size);
+}
+
+
+.admin-header{
+  background: $admin-color-beige;
+  padding: ($base-unit * 6) ($base-unit * 3);
+  margin-bottom: ($base-unit * 3);
+  h1{
+	  font-size: em($admin-baseh1);
+	  font-family: inherit;
+	  font-weight: 300;
+	  margin-top: 0; 
+	  color: $admin-color-darkgrey;
+	}
+}
+
+
+.container {
+  @include center-block;
+  width: 96%; 
+  max-width: $total-width; 
+  padding: 0;
+}
+
+/* Overlay style */
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(153,204,51,0.9);
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(/images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	font-size: em(54);
+	@include transform(translateY(-50%));
+	@media(max-height: 30.5em){
+	  	height: 70%;
+		font-size: em(34);
+	}
+}
+
+.menu-toggle {
+  width: 184px;
+  height: 74px;
+  padding: 10px 40px;
+  z-index: 1000;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: absolute;
+  display:block;
+  top: 0;
+  right: 0;
+  @include transition(padding-top 0.6s cubic-bezier(0.7, 0.01, 0.3, 1));
+  h3{
+    display:inline-block;
+    color: $admin-color-darkgrey;
+    text-transform: uppercase;
+    font-family: $admin-font;
+    font-size: em($admin-baseh4);
+  }
+  .patty{
+    width: 24px;
+	height: 4px;
+	margin: 10px 0;
+	background: $admin-color-green;
+	position: relative;
+	display: inline-block;
+	vertical-align: text-bottom;
+	@include transition (all 0.3s);
+	&:before, &:after {
+	  content: '';
+	  display: block;
+	  width: 24px;
+	  height: 4px;
+	  background: $admin-color-green;
+	  position: absolute;
+	  z-index: -1;
+	  -webkit-transition: all 0.3s;
+	  -moz-transition: all 0.3s;
+	  -o-transition: all 0.3s;
+	  transition: all 0.3s;
+	}
+	&:before{
+	  top: -8px;
+	}
+	&:after{
+	  top: 8px;
+	}
+  }
+  &.hidden{
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity 0.5s, visibility 0s 0.5s);  
+  }
+  &.nothidden{
+    opacity: 1;
+    visibility: visible;
+    @include transition(opacity, 0.5s);
+  }
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+	@media(max-height: 30.5em){
+       min-height: 34px;
+	}
+}
+
+.overlay ul li a {
+	font-weight: 300;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-family: $admin-font;
+	@include transition(color, 0.2s);
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #e3fcb1;
+}
+
+
+.overlay-hugeinc {
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity 0.5s, visibility 0s 0.5s);
+}
+ 
+.overlay-hugeinc.open {
+    opacity: 1;
+    visibility: visible;
+    @include transition(opacity, 0.5s);
+}
+ 
+.overlay-hugeinc nav {
+    @include vendorize(perspective, 1200px);
+}
+ 
+.overlay-hugeinc nav ul {
+    opacity: 0.4;
+	@include transform(translateY(-25%) rotateX(35deg));
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+ 
+.overlay-hugeinc.open nav ul {
+    opacity: 1;
+    @include transform(rotateX(0deg));
+}
+ 
+.overlay-hugeinc.close nav ul {
+    @include transform(translateY(25%) rotateX(-35deg));
+}
+
+/* Code highlighting Styles */
+
+.headings{
+  div[class*="-style"]{
+    border: 1px solid $admin-color-beige;
+    @include row();
+    margin-bottom: ($base-unit * 3);
+  }
+}
+
+details{
+  width: 100%;
+  display:block;
+  padding: ($base-unit * 2);
+  @include clearfix();
+  background-color: rgba(237, 236, 228, 0.35);
+}
+
+summary{
+  outline: 0;
+  color: $admin-color-green;
+  cursor: pointer;
+}
+
+.pattern-markup {
+  border: 1px solid $admin-color-beige;
+  @include column(8);
+  display: block;
+  font-size: 12px;
+  overflow: scroll;
+  max-height: 200px;
+  padding: 1em 2%;
+  margin: 1em 0;
+}
+
+
+.pattern-markup, :not(pre) > code[class*="language-"] {
+  padding: 1em 2% !important;
+}
+
+.usage{
+  @include column(4);
+}
+
+.heading-preview{
+  padding: ($base-unit * 2);
+}
+
+
+section{
+  @include section-style;
+}
+
+/* Color Palette Styles */
+
+.colors {
+  ul.color-list {
+    list-style: none;
+    @include row();
+    margin-bottom: ($base-unit * 6);
+    li.color-list-item {
+      @include column(12);
+      border: 1px solid $admin-color-beige;
+      @include vendorize(border-bottom-left-radius, 10px);
+      background-clip: padding-box;
+      margin-bottom: ($base-unit * 3);
+      @media(min-width: 55em){
+        @include column(2.3);
+      }
+      .swatch-preview{
+        display:block;
+        width: 100%;
+        height: 80px;
+      }
+      ul{
+        list-style: none;
+        font-size: em(11);
+        color: $admin-color-darkgrey;
+        padding: ($base-unit * 2) $base-unit 0;
+        li{
+          &.lead{
+            font-size: em(16);
+          }
+        }
+      }
+    }
+  }
+}
+

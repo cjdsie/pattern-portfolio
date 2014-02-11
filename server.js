@@ -47,7 +47,8 @@ server.all("*", function(req, res, next) {
 server.get('/', function(req, res){
   res.render('index', {
     title: 'Pattern Portfolio',
-    description: 'A living document of Responsive Deliverables'
+    description: 'A living document of Responsive Deliverables',
+    bodyclass: 'admin-body'
   });
 });
 
