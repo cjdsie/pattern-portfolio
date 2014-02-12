@@ -723,6 +723,29 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px; }
+  .admin-header .button {
+    position: relative;
+    margin-top: 12px;
+    background: #9fbb58;
+    padding: 12px 24px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    -webkit-transition: background, 0.2s ease-in-out;
+    -moz-transition: background, 0.2s ease-in-out;
+    -ms-transition: background, 0.2s ease-in-out;
+    -o-transition: background, 0.2s ease-in-out;
+    transition: background, 0.2s ease-in-out; }
+    .admin-header .button:hover {
+      background: #849f41; }
 
 .container {
   display: block;
@@ -1035,3 +1058,32 @@ section {
       padding: 12px 6px 0; }
       .colors ul.color-list li.color-list-item ul li.lead {
         font-size: 1em; }
+
+/* Footer */
+footer[role="contentinfo"] {
+  background: #18191b;
+  color: #999999;
+  padding: 36px;
+  text-align: center; }
+  footer[role="contentinfo"] a {
+    color: #999999; }
+  footer[role="contentinfo"] .logo {
+    float: none; }
+    footer[role="contentinfo"] .logo .default-logo {
+      font-size: 0.875em;
+      font-family: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 0;
+      color: #999999;
+      -webkit-transition: font-size, 0.2s ease-in-out;
+      -moz-transition: font-size, 0.2s ease-in-out;
+      -ms-transition: font-size, 0.2s ease-in-out;
+      -o-transition: font-size, 0.2s ease-in-out;
+      transition: font-size, 0.2s ease-in-out; }
+      footer[role="contentinfo"] .logo .default-logo a {
+        padding: 2px 6px;
+        border: 2px solid #999999;
+        border-radius: 3px;
+        color: #999999;
+        text-decoration: none; }

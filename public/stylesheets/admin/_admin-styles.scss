@@ -61,7 +61,21 @@ body {
     @include center-block;
     margin-top: ($base-unit * 10);
   }
-
+  .button{
+    position: relative;
+    margin-top: ($base-unit * 2);
+    background: $admin-color-green;
+    padding: ($base-unit * 2) ($base-unit * 4);
+    @include border-radius(6px);
+    color: $white;
+    text-decoration: none;
+    font-weight: $semi-bold;
+    text-transform: uppercase;
+    @include transition(background, 0.2s ease-in-out);
+    &:hover{
+      background: #849f41;
+    }
+  }
 }
 
 
@@ -312,6 +326,38 @@ section{
         }
       }
     }
+  }
+}
+
+
+/* Footer */
+
+footer[role="contentinfo"]{
+  background: $admin-color-footer;
+  color: $black-40;
+  padding: ($base-unit * 6);
+  text-align:center;
+  a{
+    color: $black-40;
+  }
+  .logo{
+    float:none;
+    .default-logo{
+	  font-size: em(14);
+	  font-family: inherit;
+	  font-weight: $heavy;
+	  text-transform: uppercase;
+	  margin-top: 0; 
+	  color: $black-40;
+	  @include transition(font-size, 0.2s ease-in-out);
+	  a{
+	    padding: 2px 6px;
+		border: 2px solid $black-40;
+		border-radius: 3px;
+		color: $black-40;
+		text-decoration: none;	
+	  }
+	}
   }
 }
 
