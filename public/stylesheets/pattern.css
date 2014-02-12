@@ -606,6 +606,23 @@ ul.large li, li p {
       padding-bottom: 0;
       border-bottom-width: 0; }
 
+/* Links
+--------------------------------------------------*/
+a {
+  color: #2c9ab7;
+  text-decoration: none;
+  outline: 0; }
+  a:visited {
+    color: #2c9ab7;
+    text-decoration: underline;
+    outline: 0; }
+  a:hover {
+    text-decoration: underline; }
+  a:hover, a:active, a:focus {
+    color: #849f41; }
+  a[rel="external"] {
+    color: #2c9ab7; }
+
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
