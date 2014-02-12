@@ -21,21 +21,12 @@ Please do not remove any files included from the admin folder.
 
 <!-- Place patterns to include in portfolio after this comment -->
 
-<header role="banner" class="admin-header">
-	<a id="trigger-overlay" class="menu-toggle">
-		<h3>Menu</h3>
-		<div class="patty">
-			</div>
-	</a>
-		<h1>Pattern Portfolio</h1>
-</header><!-- @header -->	
+{{include admin/header.html}}
 
 <main class="patterns container" role="main">
 
-	
-	{{include patterns/color-palette.html}}
-	
-	{{include patterns/typography.html}}
+    {{include patterns/typography.html}}	
+	{{include patterns/text.html}}
 	
 </main><!-- @patterns -->
 

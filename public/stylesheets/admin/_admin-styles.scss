@@ -28,15 +28,40 @@ body {
 
 .admin-header{
   background: $admin-color-beige;
-  padding: ($base-unit * 6) ($base-unit * 3);
+  padding: ($base-unit * 3) ($base-unit * 3) ($base-unit * 10);
   margin-bottom: ($base-unit * 3);
-  h1{
-	  font-size: em($admin-baseh1);
+  .main-header-info{
+    width: 100%;
+    display: block;
+    position:relative;
+    @include clearfix();
+  }
+  .logo{
+    float:left;
+    .default-logo{
+	  font-size: em(14);
 	  font-family: inherit;
-	  font-weight: 300;
+	  font-weight: $heavy;
+	  text-transform: uppercase;
 	  margin-top: 0; 
-	  color: $admin-color-darkgrey;
+	  color: $white;
+	  @include transition(font-size, 0.2s ease-in-out);
+	  a{
+	    padding: 2px 6px;
+		border: 2px solid #fff;
+		border-radius: 3px;
+		color: #fff;
+		text-decoration: none;	
+	  }
 	}
+  }
+  .heading{
+    display: block;
+    text-align: center;
+    @include center-block;
+    margin-top: ($base-unit * 10);
+  }
+
 }
 
 
@@ -88,24 +113,22 @@ body {
 }
 
 .menu-toggle {
-  width: 184px;
-  height: 74px;
-  padding: 10px 40px;
+  float:right;
+  padding: 0px;
   z-index: 1000;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   display:block;
-  top: 0;
-  right: 0;
   @include transition(padding-top 0.6s cubic-bezier(0.7, 0.01, 0.3, 1));
   h3{
     display:inline-block;
     color: $admin-color-darkgrey;
     text-transform: uppercase;
     font-family: $admin-font;
-    font-size: em($admin-baseh4);
+    font-weight: $heavy;
+    font-size: em(14);
   }
   .patty{
     width: 24px;
@@ -216,51 +239,40 @@ body {
 
 /* Code highlighting Styles */
 
-.headings{
-  div[class*="-style"]{
+  .pattern{
     border: 1px solid $admin-color-beige;
     @include row();
     margin-bottom: ($base-unit * 3);
+    details{
+	  width: 100%;
+	  display:block;
+	  padding: ($base-unit * 2);
+	  @include clearfix();
+	  background-color: rgba(237, 236, 228, 0.35);
+	}
+	summary{
+	  outline: 0;
+	  color: $admin-color-green;
+	  cursor: pointer;
+	}
+	.pattern-markup {
+	  border: 1px solid $admin-color-beige;
+	  @include column(8);
+	  display: block;
+	  font-size: 12px;
+	  overflow: scroll;
+	  max-height: 200px;
+	  padding: 1em 2%;
+	  margin: 1em 0;
+	  word-wrap: break-word;
+	}
+	.pattern-markup, :not(pre) > code[class*="language-"] {
+	  padding: 1em 2% !important;
+	}
+	.pattern-preview{
+	  padding: ($base-unit * 2);
+	}
   }
-}
-
-details{
-  width: 100%;
-  display:block;
-  padding: ($base-unit * 2);
-  @include clearfix();
-  background-color: rgba(237, 236, 228, 0.35);
-}
-
-summary{
-  outline: 0;
-  color: $admin-color-green;
-  cursor: pointer;
-}
-
-.pattern-markup {
-  border: 1px solid $admin-color-beige;
-  @include column(8);
-  display: block;
-  font-size: 12px;
-  overflow: scroll;
-  max-height: 200px;
-  padding: 1em 2%;
-  margin: 1em 0;
-}
-
-
-.pattern-markup, :not(pre) > code[class*="language-"] {
-  padding: 1em 2% !important;
-}
-
-.usage{
-  @include column(4);
-}
-
-.heading-preview{
-  padding: ($base-unit * 2);
-}
 
 
 section{

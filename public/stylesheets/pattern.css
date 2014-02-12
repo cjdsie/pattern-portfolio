@@ -684,14 +684,45 @@ body {
 
 .admin-header {
   background: #edece4;
-  padding: 36px 18px;
+  padding: 18px 18px 60px;
   margin-bottom: 18px; }
-  .admin-header h1 {
-    font-size: 3.4375em;
-    font-family: inherit;
-    font-weight: 300;
-    margin-top: 0;
-    color: #242628; }
+  .admin-header .main-header-info {
+    width: 100%;
+    display: block;
+    position: relative;
+    *zoom: 1; }
+    .admin-header .main-header-info:before, .admin-header .main-header-info:after {
+      content: "";
+      display: table; }
+    .admin-header .main-header-info:after {
+      clear: both; }
+  .admin-header .logo {
+    float: left; }
+    .admin-header .logo .default-logo {
+      font-size: 0.875em;
+      font-family: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 0;
+      color: white;
+      -webkit-transition: font-size, 0.2s ease-in-out;
+      -moz-transition: font-size, 0.2s ease-in-out;
+      -ms-transition: font-size, 0.2s ease-in-out;
+      -o-transition: font-size, 0.2s ease-in-out;
+      transition: font-size, 0.2s ease-in-out; }
+      .admin-header .logo .default-logo a {
+        padding: 2px 6px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        color: #fff;
+        text-decoration: none; }
+  .admin-header .heading {
+    display: block;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px; }
 
 .container {
   display: block;
@@ -743,17 +774,14 @@ body {
       font-size: 2.125em; } }
 
 .menu-toggle {
-  width: 184px;
-  height: 74px;
-  padding: 10px 40px;
+  float: right;
+  padding: 0px;
   z-index: 1000;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   display: block;
-  top: 0;
-  right: 0;
   -webkit-transition: padding-top 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
   -moz-transition: padding-top 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
   -ms-transition: padding-top 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
@@ -764,7 +792,8 @@ body {
     color: #242628;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.375em; }
+    font-weight: 700;
+    font-size: 0.875em; }
   .menu-toggle .patty {
     width: 24px;
     height: 4px;
@@ -895,60 +924,50 @@ body {
   transform: translateY(25%) rotateX(-35deg); }
 
 /* Code highlighting Styles */
-.headings div[class*="-style"] {
+.pattern {
   border: 1px solid #edece4;
   display: block;
   width: 102.08333%;
   margin: 0 -1.04167%;
   *zoom: 1;
   margin-bottom: 18px; }
-  .headings div[class*="-style"]:before, .headings div[class*="-style"]:after {
+  .pattern:before, .pattern:after {
     content: "";
     display: table; }
-  .headings div[class*="-style"]:after {
+  .pattern:after {
     clear: both; }
-
-details {
-  width: 100%;
-  display: block;
-  padding: 12px;
-  *zoom: 1;
-  background-color: rgba(237, 236, 228, 0.35); }
-  details:before, details:after {
-    content: "";
-    display: table; }
-  details:after {
-    clear: both; }
-
-summary {
-  outline: 0;
-  color: #9fbb58;
-  cursor: pointer; }
-
-.pattern-markup {
-  border: 1px solid #edece4;
-  display: inline;
-  float: left;
-  width: 64.58333%;
-  margin: 0 1.04167%;
-  display: block;
-  font-size: 12px;
-  overflow: scroll;
-  max-height: 200px;
-  padding: 1em 2%;
-  margin: 1em 0; }
-
-.pattern-markup, :not(pre) > code[class*="language-"] {
-  padding: 1em 2% !important; }
-
-.usage {
-  display: inline;
-  float: left;
-  width: 31.25%;
-  margin: 0 1.04167%; }
-
-.heading-preview {
-  padding: 12px; }
+  .pattern details {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    *zoom: 1;
+    background-color: rgba(237, 236, 228, 0.35); }
+    .pattern details:before, .pattern details:after {
+      content: "";
+      display: table; }
+    .pattern details:after {
+      clear: both; }
+  .pattern summary {
+    outline: 0;
+    color: #9fbb58;
+    cursor: pointer; }
+  .pattern .pattern-markup {
+    border: 1px solid #edece4;
+    display: inline;
+    float: left;
+    width: 64.58333%;
+    margin: 0 1.04167%;
+    display: block;
+    font-size: 12px;
+    overflow: scroll;
+    max-height: 200px;
+    padding: 1em 2%;
+    margin: 1em 0;
+    word-wrap: break-word; }
+  .pattern .pattern-markup, .pattern :not(pre) > code[class*="language-"] {
+    padding: 1em 2% !important; }
+  .pattern .pattern-preview {
+    padding: 12px; }
 
 section {
   width: 100%;
@@ -962,7 +981,7 @@ section {
     display: table; }
   section:after {
     clear: both; }
-  section h4 {
+  section h4.admin-h4 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -1px;
