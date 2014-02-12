@@ -251,7 +251,7 @@ body {
     @include transform(translateY(25%) rotateX(-35deg));
 }
 
-/* Code highlighting Styles */
+/* Pattern Styles */
 
   .pattern{
     border: 1px solid $admin-color-beige;
@@ -285,6 +285,18 @@ body {
 	}
 	.pattern-preview{
 	  padding: ($base-unit * 2);
+	}
+	.pattern-list{
+	  list-style: none;
+	  @include row();
+	  margin-bottom: ($base-unit * 6);
+	  li{
+	    @include column(12);
+	    margin-bottom: ($base-unit * 3);
+	    @media(min-width: 55em){
+          @include column(2);
+        } 
+	  }
 	}
   }
 

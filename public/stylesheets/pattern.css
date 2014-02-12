@@ -257,9 +257,13 @@ button[disabled], html input[disabled] {
 
 /* Global Variables
 ================================================= */
+/* Base Font Variables
+========================= */
 /* Colors Variables
 ========================= */
 /* Border Radius Math Variables
+========================= */
+/* Avatar Default sizes Variables
 ========================= */
 /* Typography Variables
 ========================= */
@@ -357,7 +361,7 @@ button[disabled], html input[disabled] {
 ========================= */
 h1, h2, h3, h4, h5, h6 {
   color: #181818;
-  font-family: "proxima-nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   text-rendering: optimizelegibility;
   line-height: 1.5;
@@ -367,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-bottom: 0.525em;
-  font-family: "atrament-web", sans-serif; }
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 h2 {
   margin-bottom: 0.65385em; }
@@ -459,7 +463,7 @@ pre {
   word-wrap: break-word; }
 
 code {
-  color: #97d272; }
+  color: #999999; }
 
 sub {
   position: relative;
@@ -509,6 +513,98 @@ body {
     display: table; }
   body:after {
     clear: both; }
+
+/* Images
+--------------------------------------------------*/
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+/* -- FIGURES -- */
+figure {
+  margin-bottom: 36px; }
+  figure img {
+    margin-bottom: 12px; }
+  figure figcaption {
+    display: block;
+    font-weight: normal;
+    font-size: 0.875em;
+    color: #808080; }
+
+/* Images
+   You can change each of the sizes to fix your design
+--------------------------------------------------*/
+.avatars img {
+  display: block; }
+.avatars .img-lg {
+  width: 8em; }
+.avatars .img-medium {
+  width: 4.375em; }
+.avatars .img-small {
+  width: 3em; }
+.avatars .img-tiny {
+  width: 1.5em; }
+
+/* Lists
+--------------------------------------------------*/
+ul, ol {
+  margin-bottom: 18px;
+  margin: 8px 0;
+  margin-left: 18px;
+  padding: 0 0 0 42px; }
+
+ul {
+  list-style: none outside; }
+
+ol {
+  list-style: decimal; }
+
+ul.square, ul.circle, ul.disc {
+  margin-left: 18px; }
+ul.square {
+  list-style: square outside; }
+ul.circle {
+  list-style: circle outside; }
+ul.disc {
+  list-style: disc outside; }
+ul ul, ul ol {
+  margin: 6px 0 6px 18px;
+  font-size: 90%; }
+
+ol ol, ol ul {
+  margin: 6px 0 6px 18px;
+  font-size: 90%; }
+
+ul ul li, ul ol li {
+  margin-bottom: 6px; }
+
+ol ol li, ol ul li {
+  margin-bottom: 6px; }
+
+li {
+  line-height: inherit;
+  margin-bottom: 12px; }
+
+ul.large li, li p {
+  line-height: inherit; }
+
+.list-bordered {
+  list-style-type: none;
+  margin: 0 0 18px 0;
+  padding: 0; }
+  .list-bordered li {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #c7ced6; }
+    .list-bordered li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom-width: 0; }
 
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -946,7 +1042,7 @@ body {
   -o-transform: translateY(25%) rotateX(-35deg);
   transform: translateY(25%) rotateX(-35deg); }
 
-/* Code highlighting Styles */
+/* Pattern Styles */
 .pattern {
   border: 1px solid #edece4;
   display: block;
@@ -991,6 +1087,30 @@ body {
     padding: 1em 2% !important; }
   .pattern .pattern-preview {
     padding: 12px; }
+  .pattern .pattern-list {
+    list-style: none;
+    display: block;
+    width: 102.08333%;
+    margin: 0 -1.04167%;
+    *zoom: 1;
+    margin-bottom: 36px; }
+    .pattern .pattern-list:before, .pattern .pattern-list:after {
+      content: "";
+      display: table; }
+    .pattern .pattern-list:after {
+      clear: both; }
+    .pattern .pattern-list li {
+      display: inline;
+      float: left;
+      width: 97.91667%;
+      margin: 0 1.04167%;
+      margin-bottom: 18px; }
+      @media (min-width: 55em) {
+        .pattern .pattern-list li {
+          display: inline;
+          float: left;
+          width: 14.58333%;
+          margin: 0 1.04167%; } }
 
 section {
   width: 100%;

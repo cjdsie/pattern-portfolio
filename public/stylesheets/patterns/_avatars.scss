@@ -1,0 +1,20 @@
+/* Images
+   You can change each of the sizes to fix your design
+--------------------------------------------------*/
+.avatars{
+  img{
+    display:block;
+  }
+  .img-lg {
+    width: em($avatar-lg);
+  }
+  .img-medium {
+    width: em($avatar-medium);
+  }
+  .img-small{
+    width: em($avatar-small);
+  }
+  .img-tiny {
+    width: em($avatar-tiny);
+  }
+}

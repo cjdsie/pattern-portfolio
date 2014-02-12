@@ -16,26 +16,30 @@ $black-90: darken(#fff, 90%);
 // Base Measurement Unit
 $base-unit: 6px;
 
-$headline-font: "atrament-web",sans-serif;
-$body-font: "proxima-nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+/* Base Font Variables
+========================= */
+$headline-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$body-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
 /* Colors Variables
 ========================= */
 $white: #fff;
-$lightgrey: #fafafa;
-$darkergrey: #f1f1f1;
-$footertextgrey: #999;
-$bordergrey: #ddd;
-$fontgrey: #373737;
-$green: #7bc64b;
-$lightgreen: lighten($green, 10%); //rgba(98, 156, 61, .6)
-$darkergreen: darken($green, 10%);
-$fcred: #3D0C02;
+
 
 /* Border Radius Math Variables
 ========================= */
 $radius: ($base-unit - 3);
+
+
+/* Avatar Default sizes Variables
+========================= */
+
+$avatar-lg: 128;
+$avatar-medium: 70;
+$avatar-small: 48;
+$avatar-tiny: 24;
 
 
 /* Typography Variables
